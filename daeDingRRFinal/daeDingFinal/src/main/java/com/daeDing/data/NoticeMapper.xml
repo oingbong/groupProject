@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="notice">
+	
+	<!-- 게시물 삭제를 위한 질의문 -->
+	<delete id="delete">
+		delete notice where n_no=#{n_no} and n_pwd=#{n_pwd}
+	</delete>
+	
+	<!-- 게시물 수정을 위한 질의문 -->
+	<update id="update">
+		update notice set n_title=#{n_title},n_writer=#{n_writer},n_content=#{n_content},n_fname=#{n_fname},n_fsize=#{n_fsize} where n_no=#{n_no} and n_pwd=#{n_pwd}
+	</update>
+	
+	<!-- 전체레코드 수를 반환하는 질의문 -->
+	<select id="totalCount" resultType="int">
+		select count(*) from notice
+		<if test="keyword != null">
+		   where ${searchField} like '%'||#{keyword}||'%'	
+		</if>
+		<if test="id != null">
+			where n_writer = #{id}
+		</if>
+	</select>
+	
+	
+	<!-- 답글 등록시에 이미 있는 답글들의 b_step를 1씩 증가하는 질의문 -->
+	<update id="updateStep">
+		update notice set b_step = b_step + 1 where b_ref=#{b_ref} and b_step > #{b_step}
+	</update>
+	
+	<!-- 새로운 게시물번호를 반환하는 질의문 -->
+	<select id="nextNo" resultType="int">
+		select nvl(max(n_no),0)+1 from notice
+	</select>
+	
+	<update id="updateHit" >
+		update notice set n_hit = n_hit + 1 where n_no=#{n_no}
+	</update>
+	
+	<select id="selectNoticeByNo" resultType="noticeVo">
+		select * from notice where n_no=#{n_no}
+	</select>
+	
+	<insert id="insert" parameterType="noticeVo">
+		insert into notice values(seq_notice.nextval,#{n_title},#{n_content},0,sysdate,#{n_pwd},#{n_fname},#{n_fsize},#{b_ref},#{b_level},#{b_step},#{del_p},#{n_writer})
+	</insert>  
+
+  <select id="selectAll" resultType="noticeVo">  	
+ select n_no, n_title, n_writer, n_content, n_hit, n_date, n_pwd, n_fname,
+n_fsize,b_ref,b_level,b_step,del_p
+from(
+select rownum num, n_no, n_title, n_writer, n_content, n_hit, n_date, n_pwd, n_fname, 
+n_fsize,b_ref,b_level,b_step,del_p
+from
+(select n_no, n_title, n_writer, n_content, n_hit, n_date, n_pwd, n_fname, 
+n_fsize,b_ref,b_level,b_step,del_p from notice 
+<if test="keyword != null">
+ where ${searchField} like '%'||#{keyword}||'%'
+</if>
+<if test="id != null">
+ where n_writer = #{id}
+</if>
+order by 
+  <choose>
+    <when test="sort != null">
+      ${sort} asc
+    </when>
+    <otherwise>
+      b_ref desc, b_step asc
+    </otherwise>
+  </choose>
+)) a where a.num between #{start} and #{end}  	
+  </select>
+</mapper>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
