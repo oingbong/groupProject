@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="orderInfo">
+
+	<select id="selectAll" resultType="orderInfoVo">
+		select * from OrderInfo where oi_id=#{m_id}
+	</select>
+
+	<insert id="insertOrderInfo" parameterType="orderInfoVo">
+		insert into OrderInfo values(seq_OrderInfo.nextval, sysdate, #{oi_price}, #{oi_buycount}, #{oi_id} , #{oi_goodsno})
+	</insert>
+</mapper>

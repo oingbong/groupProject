@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration
+  PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+	<properties resource="com/daeDing/data/db.properties"/>
+	
+	<typeAliases>
+		<typeAlias type="com.daeDing.vo.MemberVo" alias="memberVo"/>
+		<typeAlias type="com.daeDing.vo.GoodsVo" alias="goodsVo" />
+		<typeAlias type="com.daeDing.vo.NoticeVo" alias="noticeVo" />
+		<typeAlias type="com.daeDing.vo.QuestionVo" alias="questionVo" />
+		<typeAlias type="com.daeDing.vo.MailVo" alias="mailVo" />
+		<typeAlias type="com.daeDing.vo.OrderInfoVo" alias="orderInfoVo" />
+		<typeAlias type="com.daeDing.vo.CartVo" alias="cartVo" />
+		<typeAlias type="com.daeDing.vo.FaqVo" alias="faqVo" />
+	</typeAliases>
+  <environments default="development">
+    <environment id="development">
+      <transactionManager type="JDBC"/>
+      <dataSource type="POOLED">
+        <property name="driver" value="${driver}"/>
+        <property name="url" value="${url}"/>
+        <property name="username" value="${username}"/>
+        <property name="password" value="${password}"/>
+      </dataSource>
+    </environment>
+  </environments>
+  <mappers>
+    <mapper resource="com/daeDing/data/MemberMapper.xml"/>
+    <mapper resource="com/daeDing/data/GoodsMapper.xml" />
+    <mapper resource="com/daeDing/data/NoticeMapper.xml" />
+    <mapper resource="com/daeDing/data/MailMapper.xml" />
+    <mapper resource="com/daeDing/data/QuestionMapper.xml" />
+    <mapper resource="com/daeDing/data/OrderInfoMapper.xml" />
+    <mapper resource="com/daeDing/data/FaqMapper.xml" />
+    <mapper resource="com/daeDing/data/CartMapper.xml" />
+  </mappers>
+</configuration>

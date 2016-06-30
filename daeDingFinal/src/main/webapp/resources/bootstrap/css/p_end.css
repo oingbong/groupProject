@@ -1,0 +1,278 @@
+@CHARSET "UTF-8";
+
+@import url(//spoqa.github.io/spoqa-han-sans/css/SpoqaHanSans-kr.css);
+
+body {
+    min-height: 800px;
+    padding-top: 45px;
+    font-family: 'Spoqa Han Sans', NanumGothic,"나눔고딕","Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+.navbar-collapse {
+    margin-top: 21px;
+}
+
+.navbar-default {
+    background: #fbfbfb;
+    font-weight: bold;
+}
+
+.footer {
+    padding-right: 0;
+    padding-left: 0;
+}
+
+.footer {
+    padding-top: 40px;
+    padding-bottom: 40px;
+    margin-top: 40px;
+    border-top: 1px solid #eee;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: "intake", sans-serif;
+    text-rendering:auto
+}
+
+.open_sans_400 {
+    font-family: 'Open Sans', sans-serif;
+}
+
+.intake {
+    font-family: 'intake';
+}
+
+.masthead {
+    margin-top: 30px;
+}
+
+.marketing {
+    text-align: center;
+    color: #5a5a5a;
+}
+.marketing h1 {
+    margin: 0 0 10px;
+    font-size: 40px;
+    font-weight: 200;
+    line-height: 1;
+    letter-spacing: -1px;
+}
+.marketing h2 {
+    font-weight: 200;
+    margin-bottom: 5px;
+}
+.marketing p {
+    font-size: 16px;
+    line-height: 1.5;
+}
+.marketing .marketing-byline {
+    margin-bottom: 40px;
+    font-size: 16px;
+    font-weight: 300;
+    line-height: 1.25;
+    color: #999;
+}
+.marketing-img {
+    display: block;
+    margin: 0 auto 30px;
+    max-height: 145px;
+}
+
+hr.thin {
+    margin-top: 7px;
+}
+
+hr.muted {
+    border-top-style: none;
+}
+
+hr.soften {
+    height: 1px;
+    margin: 70px 0;
+    background-image: -webkit-linear-gradient(left, rgba(0,0,0,0), rgba(0,0,0,.1), rgba(0,0,0,0));
+    background-image:    -moz-linear-gradient(left, rgba(0,0,0,0), rgba(0,0,0,.1), rgba(0,0,0,0));
+    background-image:     -ms-linear-gradient(left, rgba(0,0,0,0), rgba(0,0,0,.1), rgba(0,0,0,0));
+    background-image:      -o-linear-gradient(left, rgba(0,0,0,0), rgba(0,0,0,.1), rgba(0,0,0,0));
+    border: 0;
+}
+
+.centered {
+    text-align: center;
+}
+
+h1.intake {
+    font-size: 30px;
+}
+
+h3.open_sans_400 {
+    font-size: 22px;
+}
+
+h2.join_promotion {
+    font-size: 28px;
+}
+
+.carousel-control.right {
+    background-image: none;
+}
+
+.carousel-control.left {
+    background-image: none;
+}
+
+
+.bs-docs-header {
+    margin-bottom: 20px;
+    font-size: 20px
+}
+
+.bs-docs-header h1 {
+    margin-top: 0;
+    color: #5a5a5a;
+}
+
+.bs-docs-header p {
+    margin-bottom: 0;
+    font-size: 12pt;
+    font-weight: 300;
+    line-height: 1.4;
+    color: #999;
+}
+
+.bs-docs-header .container {
+    position: relative
+}
+
+.bs-docs-masthead, .bs-docs-header {
+    position: relative;
+    padding: 30px 15px;
+    color: #5a5a5a;;
+    text-align: center;
+    text-shadow: 0 1px 0 rgba(0, 0, 0, .1);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: 100%;
+}
+
+.press_article {
+    padding-bottom: 20px;
+}
+
+@media (min-width: 768px) {
+    body {
+        min-height: 1200px;
+        padding-top: 100px;
+    }
+
+    .navbar {
+        min-height: 100px;
+    }
+
+    .navbar-toggle {
+        margin-top: 35px;
+    }
+
+
+    .bs-docs-header {
+        padding-top: 60px;
+        padding-bottom: 60px;
+        font-size: 24px;
+        text-align: left;
+        color: #ffffff;
+    }
+
+    .bs-docs-header {
+        margin-bottom: 40px;
+        font-size: 20px;
+        color: #ffffff;
+    }
+
+    .bs-docs-header h1 {
+        color: #ffffff;
+    }
+
+    .bs-docs-header p {
+        color: #ffffff;
+    }
+
+    #about_header {
+        background-image: url("../img/about/header.png");
+    }
+
+    #press_header {
+        background-image: url("../img/press/header.jpg");
+    }
+
+    #brand_header {
+        background-image: url("../img/brand/header.jpg");
+    }
+
+    #service_header {
+        background-image: url("../img/service/header.jpg");
+    }
+
+    #contact_header {
+        background-image: url("../img/contact/header.jpg");
+    }
+
+    #jobs_header {
+        background-image: url("../img/jobs/header.png");
+    }
+
+    #team_header {
+        background-image: url("../img/team/header.jpg");
+    }
+
+    .press_article {
+        padding-bottom: 60px;
+    }
+
+}
+
+
+@media (min-width: 992px) {
+    .bs-docs-header h1,.bs-docs-header p {
+        margin-right:300px
+    }
+}
+
+
+
+
+
+.team_member {
+    text-align: center;
+}
+
+.nav-tabs {
+    margin-bottom: 15px;
+}
+
+.index_body {
+    padding-top: 25px;
+
+}
+
+@media (max-width: 767px) {
+    .nav-tabs > li {
+        float:none;
+        border:1px solid #dddddd;
+    }
+    .nav-tabs > li.active > a{
+        border:none;
+    }
+    .nav > li > a:hover, .nav > li > a:focus,
+    .nav-tabs > li.active > a, .nav-tabs > li.active > a:hover, .nav-tabs > li.active > a:focus
+    {
+        background:none;
+        border:none;
+    }
+}
+
+.img-brands {
+    max-width: 100%;
+}
+
+.press_article_date {
+    color: #5a5a5a;
+}
